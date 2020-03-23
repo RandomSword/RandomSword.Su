@@ -1,0 +1,145 @@
+<!-- Copyright ©, Все права защищены (нет) --> 
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>игра</title>
+</head>
+<body>
+
+    <!-- КАРОЧ КАТОРАЯ ВЫСВЕЧИВАЕТСЯ :) -->
+
+
+
+    <div class="options" id="options">
+        <h2>Настройки</h2>
+        <button onclick="codes_options()">Коды</button>
+        <a href="help/index.html"><button>Обучение</button></a>
+        <button onclick='support_options()'>Связаться с разработчиком</button>
+        <p>Разработчик: <a href="#">Vlad Shakitskiy</a></p>
+        <p>Группа поддержки<code>(:D)</code>: <a href="#">Катя Лис &#10084;</a>, <a href="#">Аделаида Вицберг &#10084;</a></p>
+        <button onclick="close_options()">Закрыть</button>
+    </div>
+    <div class="attention" id="codes">
+        <h2 id="h2_codes">Коды</h2>
+        <p id="p_codes">Введите код:</p>
+        <input type="name" id="input_codes">
+        <button id="button2_codes" onclick="codes_check()">Проверить</button>
+        <button onclick="close_codes()">Закрыть</button>
+        <p id="p2_codes"></p>
+    </div>
+    <div class="attention" id="support">
+        <h2>Нужно связаться с разработчиком?</h2>
+        <p>Vk: <a href="#">@shenghuo_zhong_de_xin_shuguang</a></p>
+        <p>Почта: <a href="#">Vshakitskiy@gmail.com</a></p>
+        <p>Дискорд: VladShakitskiy#0126</p>
+        <button onclick="support_close()">Закрыть</button>
+    </div>
+
+
+
+    <!-- ОБЩИЙ -->
+    <div id="display_all">
+    <h1>Игра</h1>
+    <hr>
+    
+        <div class="menu">
+            <button onclick="open_options()">Настройки</button>
+            <h2>Меню</h2>
+            <a href="#">Статистика</a>
+            <a href="#">Ресурсы</a>
+            <a href="#">Оружие</a>
+            <a href="#">Поиск</a>
+            <a href="#">Смена</a>
+            <a href="#">Сундуки</a>
+            <a href="#">Улучшения</a>
+        </div>
+    <hr>
+    <div class="stats">
+        <h2>Статистика:</h2>
+        <p>Кубки: <span id="cup_user">0</span> <span id="images_help_off"><img onclick="" src='images/vopros2.png' width='15px' height='15px' id="img_vopr"></span></p>
+        <p>Урон: <span id="xit_user">2</span> <span id="images_help_off"><img onclick="" src='images/vopros2.png' width='15px' height='15px' id="img_vopr"></span></p> 
+        <p>Уровень: <span id="level">1</span> <span id="images_help_off"><img onclick="" src='images/vopros2.png' width='15px' height='15px' id="img_vopr"></span></p>
+    </div>
+    <div class="recourse">
+        <h2>Ресурсы:</h2>
+        <p>Монеты: <span id="money">0</span> <span id="images_help_off"><img onclick="" src='images/vopros2.png' width='15px' height='15px' id="img_vopr"></span></p>
+        <p>Кристалы: <span id="crystals">0</span> <span id="images_help_off"><img onclick="" src='images/vopros2.png' width='15px' height='15px' id="img_vopr"></span></p>
+        <p>Карты: <span id="cards">0</span> <span id="images_help_off"><img onclick="" src='images/vopros2.png' width='15px' height='15px' id="img_vopr"></span></p>
+    </div>
+    <div class="dev">
+        <h2>Оружие:</h2>
+        <p>Класс: <span id="class_sword">Классическое</span></p>
+        <p>Тип: <span id="type_sword">Безполезный</span> <span id="images_help_off"><img onclick="" src='images/vopros2.png' width='15px' height='15px' id="img_vopr"></span></p>
+        <p>Уровень оружия: <span id="level_sword">1</span> <span id="images_help_off"><img onclick="" src='images/vopros2.png' width='15px' height='15px' id="img_vopr"></span></p>
+    </div>
+    <hr>
+    <div class="menu">
+        <div class="searce">
+            <h2>Поиск соперников:</h2>
+            <button onclick="fight()">Бой</button> <span id="images_help_off"><img onclick="" src='images/vopros2.png' width="15px" height="15px" id="img_vopr"></span>
+            <h2>Добыча:</h2>
+            <button id="d" onclick="extract()">Добыть</button> <span id="images_help_off"><img onclick="" src='images/vopros2.png' width='15px' height='15px' id="img_vopr"></span>
+        </div>
+        <div class="reverse">
+            <h2>Смена оружия:</h2>
+
+            <p>
+                Доступное: <span>Классическое, </span><span id="fire_unlock">Огненное, </span><span id="electric_unlock">Электрическое, </span><span id="winter_unlock">Ветряное, </span>
+                <span id="poison_unlock">Ядовитое, </span><span id="frozen_unlock">Ледяное, </span><span id="iron_unlock">Железное, </span><span id="paralyzing_unlock">Параллизующее, </span>
+                <span id="sacrificial_unlock">Жертвенное, </span><span id="pinion_unlock">Шестереночное, </span><span id="whirlwind_unlock">Ураганное, </span><span id='light_unlock'>Световое, </span>
+            </p>
+
+            <button onclick="replacement_with_fire()" id="fire_sword_replace">Сменить на Огненное</button>
+            <button onclick="replacement_with_classic()" id="classic_sword_replace">Сменить на Классическое</button>
+
+            <button onclick="replacement_with_electric()" id="electric_sword_replace">Сменить на Электрическое</button>
+            <button onclick="replacement_with_winter()" id="winter_sword_replace">Сменить на Ветряное</button>
+            <button onclick="replacement_with_poison()" id="poison_sword_replace">Сменить на Ядовитое</button>
+            <button onclick="replacement_with_frozen()" id="frozen_sword_replace">Сменить на Ледяное</button>
+            <button onclick="replacement_with_iron()" id="iron_sword_replace">Сменить на Железное</button>
+            <button onclick="replacement_with_paralyzing()" id="paralyzing_sword_replace">Сменить на Параллизующее</button>
+            <button onclick="replacement_with_sacrificial()" id="sacrificial_sword_replace">Сменить на Жертвенное</button>
+            <button onclick="replacement_with_pinion()" id="pinion_sword_replace">Сменить на Шестереночное</button>
+            <button onclick="replacement_with_whirlwind()" id="whirlwind_sword_replace">Сменить на Ураганное</button>
+            <button onclick="replacement_with_light()" id="light_sword_replace">Сменить на Световое</button>
+        </div>
+        <div class="chests">
+            <h2>Сундуки</h2>
+            <button onclick="buy_cards()">Открыть карточный сундук(40 карт)</button> <span id="images_help_off"><img onclick="" src='images/vopros2.png' width='15px' height='15px' id="img_vopr"></span>
+        </div>
+        <div class="upgrade">
+            <h2>Улучшения:</h2>
+            <button onclick="upgrade_classic()" id="upgrade_classic_display">Оружие<span>(Классическое): 30 монет</span></button>
+            <button onclick="upgrade_fire()" id="upgrade_fire_display">Оружие<span>(Огненное): 150 монет</span></button>
+            <button onclick="upgrade_electric()" id="upgrade_electric_display">Оружие<span>(Электрическое): 200 монет</span></button>
+            <button onclick="upgrade_winter()" id="upgrade_winter_display">Оружие<span>(Ветряное): 500 монет</span></button>
+            <button onclick="upgrade_poison()" id="upgrade_poison_display">Оружие<span>(Ядовитое): 500 монет</span></button>
+            <button onclick="upgrade_frozen()" id="upgrade_frozen_display">Оружие<span>(Ледяное): 300 монет</span></button>
+            <button onclick="upgrade_iron()" id="upgrade_iron_display">Оружие<span>(Железное): 1500 монет</span></button>
+            <button onclick="upgrade_paralyzing()" id="upgrade_paralyzing_display">Оружие<span>(Параллизующее): 300 монет</span></button><br>
+            <button onclick="upgrade_pinion()" id="upgrade_pinion_display">Оружие<span>(Шестереночное): 3000 монет</span></button><br>
+            <button onclick="upgrade_whirlwind()" id="upgrade_whirlwind_display">Оружие<span>(Ураганное): 4000 монет</span></button><br>
+            <button onclick="upgrade_light()" id="upgrade_light_display">Оружие<span>(Световое): 800 монет</span></button><br>
+
+        </div>
+    </div>
+    <h3>v BETA_0.1.2</h3>
+    <button onclick="t()">t</button>
+    <button onclick="cheats()">cheats</button>
+
+
+
+    </div>
+    <script src="scripts/extract.js"></script>
+    <script src="scripts/swords.js"></script>
+    <script src="scripts/upgrades.js"></script>
+    <script src="scripts/bots.js"></script>
+    <script src="scripts/chests.js"></script>
+    <script src="scripts/options.js"></script>
+    <script src="scripts/help.js"></script>
+</body>
+</html>
