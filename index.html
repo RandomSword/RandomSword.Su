@@ -17,10 +17,10 @@
     <div class="options" id="options">
         <h2>Настройки</h2>
         <button onclick="codes_options()">Коды</button>
-        <a href="help/index.html"><button>Обучение</button></a>
+        <button id="button_rules" onclick="rules_after()">Обучение</button>
         <button onclick='support_options()'>Связаться с разработчиком</button>
         <p>Разработчик: <a href="#">Vlad Shakitskiy</a></p>
-        <p>Группа поддержки<code>(:D)</code>: <a href="#">Катя Лис &#10084;</a>, <a href="#">Аделаида Вицберг &#10084;</a></p>
+        <p>Группа поддержки<code>(:D)</code>: <a href="#">Катя Лис &#10084;</a>, <a href="#">Екатерина Садовская &#10084;</a></p>
         <button onclick="close_options()">Закрыть</button>
     </div>
     <div class="attention" id="codes">
@@ -134,6 +134,83 @@
 
 
     </div>
+
+    <div id="contents_help_off_on">
+        <div class="section_1" id='section_1'>
+            <h2>Добро пожаловать в обучение!</h2>
+            <p>Суть игры проста: сражаться, прокачивать оружие, открывать сундуки, добывать ресурсы! Разберемся с основами.</p>
+            <button onclick="go_section2()">Далее</button>
+            <br>
+        </div>
+        <div class="section_2" id='section_2'>
+            <h2>Статистика</h2>
+            <p>Это статистика. Урон зависит от оружия. Кубки вы будете получать за битву с ботами, а от кубков будет зависить и уровень.</p>
+            <div class="stats">
+                <h3>ПРИМЕР:</h3>
+                <p>Кубки: <span id="cup_user">210</span></p>
+                <p>Урон: <span id="xit_user">60</span></p> 
+                <p>Уровень: <span id="level">2</span></p>
+            </div>
+            <br>
+            <button onclick="go_section3()">Далее</button>
+        </div>
+        <div class="section_3" id='section_3'>
+            <h2>Ресурсы</h2>
+            <p>Ресурсы вы будете получать несколькими способами: добычей, боями, сундуками</p>
+            <p>За бои вы будете получать монетs, кристал и карточки. За добычу и открытие сундуков только монеты.</p>
+            <div class="recourse">
+                <h3>ПРИМЕР:</h3>
+                <p>Монеты: <span id="money">3600</span></p>
+                <p>Кристалы: <span id="crystals">30</span></p>
+                <p>Карты: <span id="cards">45</span></p>
+            </div>
+            <br>
+            <button onclick="go_section4()">Далее</button>
+        </div>
+        <div class="section_4" id='section_4'>
+            <p>Оружие вы будете получать в сундуках. От вашего уровня зависят какие оружия вам будут выпадать.</p>
+            <p>От типа зависит насколько сильным будет оружие, а от уровня зависит урон оружия.</p>
+            <div class="dev">
+                <h3>ПРИМЕР:</h3>
+                <p>Класс: <span id="class_sword">Эллектрический</span></p>
+                <p>Тип: <span id="type_sword">Обычный</span></p>
+                <p>Уровень оружия: <span id="level_sword">2</span></p>
+            </div>
+            <br>
+            <button onclick="go_section5()">Далее</button>
+        </div>
+        <div class="section_5" id='section_5'>
+            <h2>Бой и Добыть</h2>
+                <p>Нажав на бой вы сразитесь с ботом, их сила зависит от вашего уровня. Чем больше ваш уровень тем сильнее он будет.</p>
+                <p>Нажав на добыть вы получаете монеты, их колличество будет зависить от вашего уровня.</p>
+            <div class="searce">
+                <h3>БОЙ:</h3>
+                <button>Бой</button>
+                <h3>ДОБЫЧА:</h3>
+                <button id="d">Добыть</button>
+            </div>
+            <br>
+            <button onclick="go_section6()">Далее</button>
+        </div>
+        <div class="section_6" id='section_6'>
+            <h2>Сундуки</h2>
+            <p>Нажав на кнопку вы откроете сундук. От вашего уровня зависит какое оружие вам выпадет.</p>
+            <div class="chests">
+                <h3>ПРИМЕР:</h3>
+                <button>Открыть карточный сундук</button>
+            </div>
+            <br>
+            <button onclick="go_section7()">Далее</button>
+        </div>
+        <div class="section_7" id='section_7'>
+            <h2>Обучение окончено!</h2>
+            <p>Поздравляю! Вам начислено 40 карточек для открытие сундука! (Есть шанс, что может ничего не выпадет)</p>
+            <p>При перезагрузке сайта ваша статистика сбрасывается, поэтому будьте осторожны!</p>
+            <button onclick="go_finish()">Завершить</button>
+        </div>
+    </div>
+
+
     <script src="scripts/extract.js"></script>
     <script src="scripts/swords.js"></script>
     <script src="scripts/upgrades.js"></script>
@@ -141,5 +218,7 @@
     <script src="scripts/chests.js"></script>
     <script src="scripts/options.js"></script>
     <script src="scripts/help.js"></script>
+    <script src="scripts/rules.js"></script>
+
 </body>
 </html>
